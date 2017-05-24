@@ -21,10 +21,10 @@ def my_api(tokens):
 def main(user, tweetid):
 	# https://dev.twitter.com/oauth/overview/application-owner-access-tokens
 	tokens = { 
-	"consumer_key"        : "5jjZS44faQDoBy0NaSM9OWpRp",
-	"consumer_secret"     : "VxPnwGm4c6DvFcqiTFBzmK7KkCuwfRmBCatJh8pU4O8rljozCU",
-	"access_token"        : "852401434717036544-DdvbvYbgsnRLihhkhNqJNHahjTRBVEV",
-	"access_token_secret" : "MMIqLwNwuqMTRsnjVgW3byXte3BGTgo5JE55cM8CwtKST" 
+	"consumer_key"        : "xxxXXXxxx",
+	"consumer_secret"     : "xxxXXXxxx",
+	"access_token"        : "xxxXXXxxx-xxxXXXxxx",
+	"access_token_secret" : "xxxXXXxxx" 
 	}
 	
 	i=random.randint(0,999)
