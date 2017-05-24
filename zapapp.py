@@ -7,6 +7,8 @@ from flask import Flask, request, make_response, render_template
 	This is an app used in conjuction with a Zapier twitter trigger
 	and Zapier Webhooks to find a mention and auto reply to that tweet.
 	Using for my Zapier application!
+
+	https://zapier.com/app/editor/20861058/overview
 '''
 
 app = Flask(__name__)
@@ -19,18 +21,18 @@ def my_api(tokens):
 def main(user, tweetid):
 	# https://dev.twitter.com/oauth/overview/application-owner-access-tokens
 	tokens = { 
-	"consumer_key"        : "xxxXXXxxx",
-	"consumer_secret"     : "xxxXXXxxx",
-	"access_token"        : "xxxXXXxxx-xxxXXXxxx",
-	"access_token_secret" : "xxxXXXxxx" 
+	"consumer_key"        : "5jjZS44faQDoBy0NaSM9OWpRp",
+	"consumer_secret"     : "VxPnwGm4c6DvFcqiTFBzmK7KkCuwfRmBCatJh8pU4O8rljozCU",
+	"access_token"        : "852401434717036544-DdvbvYbgsnRLihhkhNqJNHahjTRBVEV",
+	"access_token_secret" : "MMIqLwNwuqMTRsnjVgW3byXte3BGTgo5JE55cM8CwtKST" 
 	}
 	
 	i=random.randint(0,999)
 	api = my_api(tokens)
 	tweet =  ( 
 		"Hello " +  "@" + user +"! Here is my Zapier app!"  + "\n" + 
-		"Resume: goo.gl/09RZ4t" + "\n" +
-		"GitHub: github.com/sprengmi #" 		+ str(i)
+		"Resume: goo.gl/g5mcFj" + "\n" +
+		"GitHub: github.com/sprengmi *" 		+ str(i)
 		)
 	#status = api.update_status(status=tweet, tweetid=tweetid) 
 	status = api.update_status(status=tweet, in_reply_to_status_id = tweetid) 
@@ -46,7 +48,7 @@ def listneing():
 	
 	return main(user, tweetid)
 	
-	return make_response("Nothing found", 404, {"X-Slack-No-Retry": 1})
+	return make_response("Nothing found", 404, {"X-No-Retry": 1})
 
 @app.route("/", methods=["GET", "POST"])
 def hello():
